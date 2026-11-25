@@ -1,0 +1,2 @@
+export function wireInput(canvas,world){canvas.addEventListener('click',e=>{const r=canvas.getBoundingClientRect();world.click((e.clientX-r.left)*1280/r.width,(e.clientY-r.top)*720/r.height)});addEventListener('keydown',e=>{if(e.key>='1'&&e.key<='6')world.grab(+e.key-1);if(e.key==='g'||e.key==='G')world.cook('grill');if(e.key==='f'||e.key==='F')world.cook('fryer');if(e.key===' ')world.serve();if(e.key==='t'||e.key==='T')world.trash();if(e.key==='r'||e.key==='R')world.restart();if(e.key==='m'||e.key==='M')world.mute()})}
+const REVISION=2;

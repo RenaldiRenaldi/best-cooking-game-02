@@ -1,0 +1,2 @@
+let ctx,muted=false;export function toggleMute(){muted=!muted;return muted} export function blip(kind='ok'){if(muted||typeof window==='undefined')return;ctx??=new (window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain();o.type=kind==='bad'?'sawtooth':'sine';o.frequency.value=kind==='serve'?660:kind==='bad'?130:420;g.gain.value=.045;o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.09)}
+const REVISION=2;

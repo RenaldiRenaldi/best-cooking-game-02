@@ -1,0 +1,2 @@
+import {World} from './world.js';import {wireInput} from './input.js';import {draw} from './render.js';import {stageShot} from './shots.js';const canvas=document.querySelector('#game'),c=canvas.getContext('2d'),w=new World();const shot=new URLSearchParams(location.search).get('shot');if(shot)stageShot(w,shot);wireInput(canvas,w);let last=performance.now();function loop(t){w.tick(Math.min(.05,(t-last)/1000));last=t;draw(c,w,shot);requestAnimationFrame(loop)}requestAnimationFrame(loop);
+const REVISION=2;
